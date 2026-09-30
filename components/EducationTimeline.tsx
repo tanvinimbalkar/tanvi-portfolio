@@ -4,6 +4,31 @@ interface EducationTimelineProps {
   isDark: boolean;
 }
 
+const monthIndex: Record<string, number> = {
+  JAN: 0,
+  FEB: 1,
+  MAR: 2,
+  APR: 3,
+  APRIL: 3,
+  MAY: 4,
+  JUN: 5,
+  JUNE: 5,
+  JUL: 6,
+  JULY: 6,
+  AUG: 7,
+  SEP: 8,
+  SEPT: 8,
+  OCT: 9,
+  NOV: 10,
+  DEC: 11,
+};
+
+function endDateValue(date: string) {
+  const end = date.split('-').pop()?.trim() ?? '';
+  const [month, year] = end.split(/\s+/);
+  return Number(year) * 12 + (monthIndex[month?.toUpperCase()] ?? 0);
+}
+
 export default function EducationTimeline({ isDark }: EducationTimelineProps) {
   const bgClass = isDark ? 'bg-[#0a0e27]' : 'bg-white';
   const textClass = isDark ? 'text-white' : 'text-gray-900';
@@ -82,9 +107,11 @@ export default function EducationTimeline({ isDark }: EducationTimelineProps) {
         </div>
       </section>
       <section className="space-y-6">
-        <h3 className="text-2xl font-bold sm:text-3xl">Work</h3>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {internships.map((intern) => (
+        <h3 className="text-center text-2xl font-bold sm:text-3xl">Work</h3>
+        <div className="mx-auto flex max-w-2xl flex-col gap-6">
+          {[...internships]
+            .sort((a, b) => endDateValue(b.date) - endDateValue(a.date))
+            .map((intern) => (
             <div key={`${intern.company}-${intern.date}`} className={`${cardBgClass} space-y-2 rounded-lg p-5`}>
               <p className={`text-xs uppercase tracking-wider ${textMutedClass}`}>{intern.date}</p>
               <h4 className="text-base font-semibold">{intern.role}</h4>
