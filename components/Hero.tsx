@@ -147,15 +147,17 @@ export default function Hero() {
             >
               View Projects
             </Link>
-            <button
-              type="button"
+            <a
+              href="https://drive.google.com/drive/folders/1JFCrdbtYUX1w-gAU3PBksOo7jZMVvflL"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl border border-neutral-300 bg-white/70 px-5 py-3 text-sm font-medium text-neutral-800 transition hover:bg-white"
             >
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v10m0 0l-3.5-3.5M12 14l3.5-3.5M5 19h14" />
               </svg>
               Resume
-            </button>
+            </a>
           </div>
         </div>
       </div>
