@@ -94,7 +94,7 @@ export default function EducationTimeline({ isDark }: EducationTimelineProps) {
   return (
     <div className={`${bgClass} ${textClass} space-y-10 animate-fade-in pt-12`}>
       <section className="space-y-6">
-        <h3 className="text-2xl font-bold sm:text-3xl">University</h3>
+        <h3 className="text-center text-2xl font-bold sm:text-3xl">University</h3>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {universityRoles.map((role) => (
             <div key={`${role.role}-${role.date}`} className={`${cardBgClass} space-y-2 rounded-lg p-5`}>
