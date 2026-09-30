@@ -85,7 +85,7 @@ export default function EducationTimeline({ isDark }: EducationTimelineProps) {
       company: 'Mercedes Benz',
     },
     {
-      date: 'DEC 2021 - JUN 2021',
+      date: 'DEC 2021 - JUN 2022',
       role: 'Web Development Intern',
       company: 'Digilytics Systems LLP',
     },
